@@ -121,18 +121,16 @@ use({
 -- Improved syntax highlighting
 use({
   'nvim-treesitter/nvim-treesitter',
-  run = function()
-    require('nvim-treesitter.install').update({ with_sync = true })
-  end,
+  run = ':TSUpdate',
   requires = {
-    'JoosepAlviste/nvim-ts-context-commentstring',
+   -- 'nvim-treesitter/playground',
     'nvim-treesitter/nvim-treesitter-textobjects',
+    'JoosepAlviste/nvim-ts-context-commentstring',
   },
   config = function()
     require('ash.plugins.treesitter')
   end,
 })
-
 -- one-dark theme
  use({
   'jessarcher/onedark.nvim',
