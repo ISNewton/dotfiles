@@ -139,6 +139,7 @@ use({
   requires = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    'b0o/schemastore.nvim',
   },
   config = function()
     require('ash.plugins.lspconfig')
