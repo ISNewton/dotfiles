@@ -53,6 +53,62 @@ use({
   end,
 })
 
+-- Great Status Line
+use({
+  'nvim-lualine/lualine.nvim',
+  requires = 'kyazdani42/nvim-web-devicons',
+  config = function()
+    require('ash.plugins.lualine')
+  end,
+})
+
+-- This one is really cool: Display buffers as tabs 
+use({
+  'akinsho/bufferline.nvim',
+  requires = 'kyazdani42/nvim-web-devicons',
+  after = 'onedark.nvim',
+  config = function()
+  --  require('bufferline').setup()
+   require('ash.plugins.bufferline')
+  end,
+})
+
+-- Indentation plugin
+use({
+  'lukas-reineke/indent-blankline.nvim',
+  config = function()
+    require('ash.plugins.indent-blankline')
+  end,
+})
+
+-- Dashboard interface
+use({
+  'glepnir/dashboard-nvim',
+  config = function()
+    require('ash.plugins.dashboard')
+  end,
+})
+
+-- Git integration.
+use({
+  'lewis6991/gitsigns.nvim',
+  config = function()
+    require('gitsigns').setup()
+    vim.keymap.set('n', ']h', ':Gitsigns next_hunk<CR>')
+    vim.keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>')
+    vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
+    vim.keymap.set('n', 'gS', ':Gitsigns undo_stage_hunk<CR>')
+    vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
+    vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')
+  end,
+})
+
+-- Git commands.
+use({
+  'tpope/vim-fugitive',
+  requires = 'tpope/vim-rhubarb',
+})
+
 -- one-dark theme
  use({
   'jessarcher/onedark.nvim',
@@ -64,6 +120,8 @@ use({
       fg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
       bg = vim.api.nvim_get_hl_by_name('NormalFloat', true).background,
     })
+
+  -- This one is really cool: Display buffers as tabs
 
     -- Make the StatusLineNonText background the same as StatusLine
     vim.api.nvim_set_hl(0, 'StatusLineNonText', {
