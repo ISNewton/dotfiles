@@ -123,7 +123,7 @@ use({
   'nvim-treesitter/nvim-treesitter',
   run = ':TSUpdate',
   requires = {
-   -- 'nvim-treesitter/playground',
+   'nvim-treesitter/playground',
     'nvim-treesitter/nvim-treesitter-textobjects',
     'JoosepAlviste/nvim-ts-context-commentstring',
   },
@@ -131,6 +131,21 @@ use({
     require('ash.plugins.treesitter')
   end,
 })
+
+
+-- Language Server Protocol.
+use({
+  'neovim/nvim-lspconfig',
+  requires = {
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+  },
+  config = function()
+    require('ash.plugins.lspconfig')
+  end,
+})
+
+
 -- one-dark theme
  use({
   'jessarcher/onedark.nvim',
