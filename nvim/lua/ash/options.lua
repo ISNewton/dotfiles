@@ -39,3 +39,4 @@ vim.opt.redrawtime = 10000 -- Allow more time for loading syntax on large files
 
 vim.cmd("highlight SignColumn guibg=dark")
 
+
