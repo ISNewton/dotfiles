@@ -107,6 +107,15 @@ use({
 use({
   'tpope/vim-fugitive',
   requires = 'tpope/vim-rhubarb',
+  cmd = 'G',
+})
+
+--terminal plugin
+use({
+  'voldikss/vim-floaterm',
+  config = function()
+    require('ash.plugins.floaterm')
+  end,
 })
 
 -- one-dark theme
