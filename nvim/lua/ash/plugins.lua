@@ -11,8 +11,25 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
+
+-- Initialize packer
+require('packer').init({
+  compile_path = vim.fn.stdpath('data')..'/site/plugin/packer_compiled.lua',
+--  display = {
+--    open_fn = function()
+--      return require('packer.util').float({ border = 'solid' })
+--    end,
+--  },
+})
+
+local use = require('packer').use
+
+ use 'wbthomason/packer.nvim'
+
+ -- Commenting support
+ use('tpope/vim-commentary')
+
+--require('packer').startup(function(use)
   -- My plugins here
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
@@ -22,11 +39,11 @@ require('packer').startup(function(use)
   if packer_bootstrap then
     require('packer').sync()
   end
-end)
+--end)
 
 vim.cmd([[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+    autocmd BufWritePost plugins.lua source <afile>
   augroup end
 ]])
