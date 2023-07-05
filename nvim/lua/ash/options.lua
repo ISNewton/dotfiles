@@ -23,12 +23,13 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff =  4
 vim.opt.sidescrolloff = 4 
-vim.opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
+ vim.api.nvim_set_option("clipboard","unnamed")
+ -- vim.opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
 vim.opt.confirm = true -- ask for confirmation instead of erroring
 vim.opt.undofile = true -- persistent undo
 vim.opt.backup = true -- automatically save a backup file
 vim.opt.backupdir:remove('.') -- keep backups out of the current directory
---vim.opt.shortmess:append({ I = true }) -- disable the splash screen
+vim.opt.shortmess:append({ I = true }) -- disable the isplash screen
 vim.opt.wildmode = 'longest:full,full' -- complete the longest common match, and allow tabbing the results to fully complete them
 vim.opt.completeopt = 'menuone,longest,preview'
 
