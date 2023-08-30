@@ -201,6 +201,9 @@ use({
 
 
 -- Add, change, and delete surrounding text.
+use('leafOfTree/vim-vue-plugin')
+
+-- Add, change, and delete surrounding text.
 use('tpope/vim-surround')
 
 -- Useful commands like :Rename and :SudoWrite.
@@ -290,6 +293,16 @@ use({
   end,
 })
 
+
+
+use('prettier/vim-prettier')
+use('jose-elias-alvarez/null-ls.nvim')
+use('MunifTanjim/prettier.nvim')
+
+
+
+
+
 if packer_bootstrap then
 
   -- Automatically set up your configuration after cloning packer.nvim
@@ -305,3 +318,6 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile>
   augroup end
 ]])
+
+
+vim.cmd('au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
