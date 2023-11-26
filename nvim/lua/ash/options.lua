@@ -23,7 +23,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.scrolloff =  4
 vim.opt.sidescrolloff = 4 
- vim.api.nvim_set_option("clipboard","unnamed")
+ vim.api.nvim_set_option("clipboard","unnamedplus")
  -- vim.opt.clipboard = 'unnamedplus' -- Use Linux system clipboard
 vim.opt.confirm = true -- ask for confirmation instead of erroring
 vim.opt.undofile = true -- persistent undo

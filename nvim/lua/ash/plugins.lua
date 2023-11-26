@@ -299,9 +299,16 @@ use('prettier/vim-prettier')
 use('jose-elias-alvarez/null-ls.nvim')
 use('MunifTanjim/prettier.nvim')
 
+--  Catppuccin theme
+use { "catppuccin/nvim", as = "catppuccin" }
+require('catppuccin').setup({
+        flavour = "latte", -- latte, frappe, macchiato, mocha
+  })
+-- vim.cmd.colorscheme ""
 
 
-
+-- Blade syntax highlighter ""
+use('jwalton512/vim-blade')
 
 if packer_bootstrap then
 

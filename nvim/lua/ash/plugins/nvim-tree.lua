@@ -6,7 +6,6 @@ require('nvim-tree').setup({
     ignore = false,
   },
   renderer = {
-    highlight_opened_files = '1',
     group_empty = true,
     icons = {
       show = {
