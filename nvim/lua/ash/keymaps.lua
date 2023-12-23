@@ -21,7 +21,8 @@ vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true })
 
 -- Paste replace visual selection without copying it
-vim.keymap.set('v', 'p', '"_dP')
+vim.keymap.set('v', '<leader>p', '"_dP')
+vim.keymap.set('v', 'p', '"_dP' , {remap = true})
 
 -- Easy insertion of a trailing ; or , from insert mode
 vim.keymap.set('i', ';;', '<Esc>A;<Esc>')
@@ -46,4 +47,21 @@ vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv-gv")
 vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv-gv")
 
 
+-- Sync packer packages
 vim.keymap.set('n', '<leader>ps', ':PackerSync<CR>')
+
+
+-- Scroll up/down 
+vim.keymap.set('n', '<leader>u', '<C-u>' , {remap = true})
+vim.keymap.set('n', '<leader>d', '<C-d>' , {remap = true})
+
+
+
+
+vim.keymap.set('n', '<A-j>', '<CR>u')
+vim.keymap.set('n', '<A-k>', '<CR>d')
+vim.keymap.set('n', '<leader>k', '<CR>u')
+vim.keymap.set('n', '<leader>j', '<CR>d')
+
+
+

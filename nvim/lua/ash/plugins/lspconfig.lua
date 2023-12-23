@@ -11,8 +11,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 -- vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting_seq_sync, {})
 
 -- PHP
+-- require('lspconfig').phpactor.setup({capabilities = capabilities})
 require('lspconfig').intelephense.setup({capabilities = capabilities})
-require('lspconfig').vue_language_server.setup({capabilities = capabilities})
+-- require('lspconfig').vue_language_server.setup({capabilities = capabilities})
 
 -- Vue, JavaScript, TypeScript
 require('lspconfig').volar.setup({

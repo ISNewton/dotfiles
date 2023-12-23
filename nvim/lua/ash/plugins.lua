@@ -74,12 +74,7 @@ use({
 })
 
 -- Indentation plugin
-use({
-  'lukas-reineke/indent-blankline.nvim',
-  config = function()
-    require('ash.plugins.indent-blankline')
-  end,
-})
+use('lukas-reineke/indent-blankline.nvim')
 
 -- Dashboard interface
 use({
@@ -131,7 +126,7 @@ use({
     require('ash.plugins.treesitter')
   end,
 })
-
+vim.g.skip_ts_context_commentstring_module = true
 
 -- Language Server Protocol.
 use({
@@ -310,6 +305,32 @@ require('catppuccin').setup({
 -- Blade syntax highlighter ""
 use('jwalton512/vim-blade')
 
+use ('adalessa/laravel.nvim')
+
+use({
+  'phpactor/phpactor',
+  run = 'composer install --no-dev --optimize-autoloader ',
+
+  config = function()
+    vim.keymap.set("n" , "<leader>pm" , "PhpactorContextMenu<CR>" )
+  end,
+})
+
+use({
+    'yaegassy/coc-blade',
+    run = 'yarn install --frozen-lockfile'
+  })
+
+use({
+    'yaegassy/coc-laravel',
+    run = 'yarn install --frozen-lockfile'
+  })
+
+
+-- use ( {'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}})
+
+-- ft: "php",
+-- run :   "composer install --no-dev --optimize-autoloader ",
 if packer_bootstrap then
 
   -- Automatically set up your configuration after cloning packer.nvim
@@ -327,4 +348,3 @@ vim.cmd([[
 ]])
 
 
-vim.cmd('au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
