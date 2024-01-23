@@ -60,8 +60,9 @@ vim.keymap.set('n', '<leader>d', '<C-d>' , {remap = true})
 
 vim.keymap.set('n', '<A-j>', '<CR>u')
 vim.keymap.set('n', '<A-k>', '<CR>d')
-vim.keymap.set('n', '<leader>k', '<CR>u')
-vim.keymap.set('n', '<leader>j', '<CR>d')
 
 
+vim.keymap.set("n" , "<leader>m" , ":PhpactorContextMenu<CR>" )
+vim.keymap.set("n" , "<S-f>" , ":Format<CR> :w<CR>" )
+vim.keymap.set("n" , "m" , ":PhpactorContextMenu<CR>" )
 

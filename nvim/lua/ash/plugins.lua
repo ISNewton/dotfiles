@@ -312,7 +312,9 @@ use({
   run = 'composer install --no-dev --optimize-autoloader ',
 
   config = function()
-    vim.keymap.set("n" , "<leader>pm" , "PhpactorContextMenu<CR>" )
+    vim.keymap.set("n" , "<leader>m" , "PhpactorContextMenu<CR>" )
+    vim.keymap.set("n" , "<leader>j" , "PhpactorContextMenu<CR>" )
+    vim.keymap.set("n" , "m" , "PhpactorContextMenu<CR>" )
   end,
 })
 
@@ -325,7 +327,35 @@ use({
     'yaegassy/coc-laravel',
     run = 'yarn install --frozen-lockfile'
   })
+-- Go To Blade
+use({
+    'ccaglak/larago.nvim',
+    requires = "nvim-lua/plenary.nvim",
+  config = function()
+  vim.keymap.set("n", "<leader>gg", "<cmd>GoBlade<cr>")
+  end,
+})
 
+use({
+    '/home/ash/sites/views-highlighter'
+  });
+use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v3.x',
+  requires = {
+    --- Uncomment the two plugins below if you want to manage the language servers from neovim
+    --- and read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
+    -- {'williamboman/mason.nvim'},
+    -- {'williamboman/mason-lspconfig.nvim'},
+
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},
+    {'hrsh7th/cmp-nvim-lsp'},
+    {'L3MON4D3/LuaSnip'},
+  }
+}
 
 -- use ( {'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}})
 
