@@ -357,6 +357,20 @@ use {
   }
 }
 
+--codeium code assistant (like copilot)
+use {
+    "Exafunction/codeium.nvim",
+    requires = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+    },
+    config = function()
+        require("codeium").setup({
+        })
+    end
+}
+
+
 -- use ( {'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}})
 
 -- ft: "php",
